@@ -1,0 +1,1 @@
+export default function DraftRoom() { return <div>Draft Room</div>; }
