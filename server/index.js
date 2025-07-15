@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
 
     // Clear any existing timer for this draft
     if (draftTimers.has(draftId)) {
-      clearTimeout(draftTimers.get(draftId));
+      clearInterval(draftTimers.get(draftId));
       draftTimers.delete(draftId);
     }
 
@@ -69,7 +69,7 @@ io.on('connection', (socket) => {
     
     // Clear existing timer if any
     if (draftTimers.has(draftId)) {
-      clearTimeout(draftTimers.get(draftId));
+      clearInterval(draftTimers.get(draftId));
     }
 
     // Start countdown
@@ -107,7 +107,7 @@ io.on('connection', (socket) => {
   socket.on('draft-complete', (draftId) => {
     // Clear any timers
     if (draftTimers.has(draftId)) {
-      clearTimeout(draftTimers.get(draftId));
+      clearInterval(draftTimers.get(draftId));
       draftTimers.delete(draftId);
     }
 
