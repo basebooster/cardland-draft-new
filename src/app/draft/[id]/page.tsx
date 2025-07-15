@@ -1,8 +1,11 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import Layout from '../../components/Layout'
-import { useAuth } from '../../hooks/useAuth'
-import { supabase } from '../../lib/supabase'
+import { useParams } from 'next/navigation'
+import Layout from '@/components/Layout'
+import { useAuth } from '@/hooks/useAuth'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabase'
 import { Clock, Users, Trophy, Play, CheckCircle } from 'lucide-react'
 
 interface Draft {
@@ -50,9 +53,10 @@ interface Pick {
 }
 
 export default function DraftRoom() {
-  const router = useRouter()
-  const { id } = router.query
+  const params = useParams()
+  const id = params?.id as string
   const { user, userProfile, loading } = useAuth()
+  const router = useRouter()
   
   const [draft, setDraft] = useState<Draft | null>(null)
   const [participants, setParticipants] = useState<Participant[]>([])

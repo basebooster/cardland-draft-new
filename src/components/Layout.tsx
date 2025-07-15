@@ -1,5 +1,7 @@
+'use client'
+
 import React from 'react'
-import { useAuth } from '../hooks/useAuth'
+import { useAuth } from '@/hooks/useAuth'
 import { LogOut, User, Settings, Home } from 'lucide-react'
 import Link from 'next/link'
 

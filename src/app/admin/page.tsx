@@ -1,8 +1,10 @@
+'use client'
+
 import React, { useState, useEffect } from 'react'
-import Layout from '../components/Layout'
-import { useAuth } from '../hooks/useAuth'
-import { useRouter } from 'next/router'
-import { supabase } from '../lib/supabase'
+import Layout from '@/components/Layout'
+import { useAuth } from '@/hooks/useAuth'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabase'
 import { Plus, Calendar, Users, Settings, Trash2, Edit, Save, X } from 'lucide-react'
 
 interface Draft {

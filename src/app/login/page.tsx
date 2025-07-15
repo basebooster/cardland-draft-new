@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useState } from 'react'
-import { useAuth } from '../hooks/useAuth'
-import { useRouter } from 'next/router'
+import { useAuth } from '@/hooks/useAuth'
+import { useRouter } from 'next/navigation'
 import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react'
 
 export default function Login() {
